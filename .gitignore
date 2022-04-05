@@ -4,3 +4,7 @@
 /dist
 .env
 map.json
+
+# Added by cargo
+
+/target
