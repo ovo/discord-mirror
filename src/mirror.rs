@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use std::net::TcpStream;
 use reqwest::Client;
 use reqwest::header::{
     HeaderMap,
@@ -12,6 +13,9 @@ pub struct MirrorClient {
    pub server_id: String
 }
 
+#[derive(Debug)]
+struct Channel {}
+
 impl MirrorClient {
     pub async fn get_new_id(self: &Self) -> Result<(), Box<dyn std::error::Error>> {
 
@@ -19,7 +23,7 @@ impl MirrorClient {
     }
 
     pub async fn get_channels(self: &Self) -> Result<(), Box<dyn std::error::Error>> {
-        let url = format!("https://discord.com/api/v8/guilds/{}/channels", self.server_id);
+        let url = format!("https://discord.com/api/v9/guilds/{}/channels", self.server_id);
         let mut hmap = HeaderMap::new();
 
         hmap.insert(AUTHORIZATION, self.token.parse().unwrap());
