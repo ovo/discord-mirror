@@ -18,7 +18,6 @@ struct Channel {}
 
 impl MirrorClient {
     pub async fn get_new_id(self: &Self) -> Result<(), Box<dyn std::error::Error>> {
-
         Ok(())
     }
 
