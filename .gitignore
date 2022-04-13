@@ -1,3 +1,4 @@
 # Added by cargo
 .env
+.DS_STORE
 /target
